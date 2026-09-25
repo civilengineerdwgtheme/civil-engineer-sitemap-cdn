@@ -65,6 +65,7 @@
   line-height:1.35;
   color:var(--heading-text);
   border-bottom:1px solid var(--border-color);
+  scroll-margin-top:84px;
 }
 #app-container h2.sm-section-title .sm-tt{
   display:inline-flex;
