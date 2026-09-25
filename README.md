@@ -2,30 +2,43 @@
 
 Reusable HTML sitemap assets for Blogger-based websites.
 
-This repository contains minified CSS and JavaScript assets used by the
-TITOREISTA sitemap. The published JavaScript bundle is currently configured
-for `https://www.titoreista.com`.
+This repository contains the source files, Blogger HTML templates, and
+minified assets used by the TITOREISTA sitemap. The published JavaScript
+bundle is currently configured for `https://www.titoreista.com`.
 
 ## Current configuration
 
-- Site: TITOREISTA
-- Site origin: `https://www.titoreista.com`
+- Example site: TITOREISTA
+- Site origin in the published bundle: `https://www.titoreista.com`
 - Platform: Blogger
 - Feed API: Blogger JSONP feeds
-- Language: Indonesian
+- Language of the published example: Indonesian
 - CDN provider: Cloudflare Workers
 - CDN hostname: `assets.titoreista.com`
 
+The public bundle is not site-independent. Configure `HOME_PAGE` before
+using the JavaScript bundle on another website.
+
 ## Public assets
 
-- CSS: https://assets.titoreista.com/sitemap/css/sitemap.min.css
-- JavaScript: https://assets.titoreista.com/sitemap/js/sitemap.min.js
+- CSS: <https://assets.titoreista.com/sitemap/css/sitemap.min.css>
+- JavaScript: <https://assets.titoreista.com/sitemap/js/sitemap.min.js>
 
-Both assets should return HTTP status `200`.
+Both URLs should return HTTP status `200`.
 
 ## Repository structure
 
 ```text
+src/
+├── css/
+│   └── sitemap.css
+└── js/
+    └── sitemap.js
+
+examples/
+├── sitemap-template.html
+└── sitemap-titoreista.html
+
 dist/
 └── sitemap/
     ├── css/
@@ -36,19 +49,15 @@ dist/
 
 ## Usage
 
-Add the sitemap HTML to a Blogger static page using the HTML view.
+1. Open `examples/sitemap-template.html` or
+   `examples/sitemap-titoreista.html`.
+2. Copy the HTML into a Blogger static page using HTML view.
+3. Replace the site name, descriptive text, image, and image metadata.
+4. Confirm that the JavaScript bundle is configured for the target site.
+5. Publish the Blogger page and test the feed, category selector, search, and
+   accordion controls.
 
-The page must load the assets:
-
-```html
-<link rel="stylesheet" href="https://assets.titoreista.com/sitemap/css/sitemap.min.css">
-
-<!-- Sitemap HTML markup -->
-
-<script defer src="https://assets.titoreista.com/sitemap/js/sitemap.min.js"></script>
-```
-
-The HTML markup must provide the element IDs expected by the JavaScript:
+The HTML template must keep these IDs because the JavaScript uses them:
 
 ```text
 app-container
@@ -66,13 +75,13 @@ action-btn
 
 ## Using another Blogger site
 
-The published JavaScript bundle is currently configured with:
+The source JavaScript contains:
 
 ```js
 var HOME_PAGE = 'https://www.titoreista.com';
 ```
 
-To use the sitemap on another Blogger site, replace the value with the target site origin without a trailing slash:
+Replace it with the target site origin without a trailing slash:
 
 ```js
 var HOME_PAGE = 'https://www.example.com';
@@ -80,79 +89,65 @@ var HOME_PAGE = 'https://www.example.com';
 
 After changing the domain:
 
-1. Update the source JavaScript.
+1. Edit `src/js/sitemap.js`.
 2. Generate a new minified JavaScript bundle.
-3. Publish the new bundle.
-4. Update the HTML text, title, image, and descriptions for the new site.
-5. Test the article feed, page feed, categories, and search.
+3. Publish the configured bundle at a URL controlled by that site.
+4. Update the HTML title, text, image, and descriptions.
+5. Test article feeds, static pages, categories, search, and mobile layout.
 
-Do not use the published TITOREISTA JavaScript bundle unchanged on another site.
+Do not use the published TITOREISTA JavaScript bundle unchanged on another
+site. Do not edit a minified file manually when the source file is available.
 
 ## Compatibility
 
-This sitemap is designed for:
+This project is designed for:
 
-- Blogger websites;
-- Blogger static pages;
+- Blogger websites and Blogger static pages;
 - Blogger feed endpoints accessible through JSONP;
 - modern browsers with JavaScript enabled;
 - templates that allow external CSS and JavaScript.
 
-This project provides an HTML sitemap. It does not replace:
-
-- Blogger XML sitemaps;
-- `robots.txt`;
-- Google Search Console submission;
-- canonical URL configuration.
+This is an HTML sitemap. It does not replace Blogger XML sitemaps,
+`robots.txt`, canonical URL configuration, or Google Search Console
+submission.
 
 ## Limitations
 
 - Articles and static pages are loaded from Blogger feeds.
 - Results depend on the availability and response of the Blogger feed.
-- Search results depend on Blogger feed search behavior.
-- Media counts may be incomplete when the feed provides summary content only.
+- Search behavior depends on Blogger feed search support.
+- Media counts may be incomplete when only summary content is available.
 - JavaScript must be enabled in the visitor's browser.
-- The site origin must point to the correct Blogger domain.
+- The configured site origin must match the target Blogger domain.
 
 ## Deployment
 
-The public assets are served through the `civil-engineer-assets` Cloudflare Worker
-at:
-
-```text
-https://assets.titoreista.com
-```
-
-The active public paths are:
-
-```text
-/sitemap/css/sitemap.min.css
-/sitemap/js/sitemap.min.js
-```
-
-The corresponding deployment assets are stored in:
+The live public assets are served by the `civil-engineer-assets` Cloudflare
+Worker at `assets.titoreista.com`. The active deployment assets are mirrored
+in the main CDN repository at:
 
 ```text
 civil-engineer-cdn/dist/sitemap/
 ```
 
-This repository is maintained as the dedicated sitemap asset repository.
+This repository is the dedicated source and documentation repository. Updating
+files here does not automatically update the live Worker unless the matching
+assets are also deployed through the main CDN deployment.
 
 ## Verification checklist
 
-Before publishing the sitemap, verify:
-
 - CSS URL returns HTTP `200`.
 - JavaScript URL returns HTTP `200`.
-- Static pages are loaded.
-- Articles are loaded.
-- Categories are populated.
-- Search works with meaningful terms.
-- Search rejects invalid short queries.
+- Static pages load.
+- Articles load.
+- Categories populate.
+- Valid searches return expected results.
+- Short or punctuation-only searches are rejected.
 - Accordion controls open and close.
 - The page works on mobile screens.
 - The browser console has no JavaScript errors.
 
 ## License
 
-Add an appropriate license before encouraging third-party reuse.
+No license is currently included. Add a license before encouraging third-party
+copying, modification, or redistribution.
