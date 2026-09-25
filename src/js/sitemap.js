@@ -244,10 +244,10 @@
     }
   }
 
-  function navMessage(el, text) {
+  function navMessage(el, text, targetId, label) {
     el.innerHTML = '<div class="sm-end">' + text + '</div>' +
-      '<a class="sm-backtop" href="#sitemap-top" aria-label="Kembali ke awal peta situs">' +
-      '&#8593; Kembali ke awal peta situs</a>';
+      '<a class="sm-backtop" href="#' + targetId + '" aria-label="' + label + '">' +
+      '&#8593; ' + label + '</a>';
   }
 
   function loadArticles(reset) {
@@ -309,7 +309,8 @@
 
       navMessage(elFeedNav, st.done
         ? 'Seluruh artikel telah ditampilkan.'
-        : 'Pemuatan artikel berhenti sebelum seluruh data selesai diterima.');
+        : 'Pemuatan artikel berhenti sebelum seluruh data selesai diterima.',
+        'articles-toggle', 'Kembali ke awal bagian artikel');
     }
 
     function fail() {
@@ -391,7 +392,8 @@
 
       navMessage(elPageNav, sp.done
         ? 'Seluruh halaman telah ditampilkan.'
-        : 'Pemuatan halaman berhenti sebelum seluruh data selesai diterima.');
+        : 'Pemuatan halaman berhenti sebelum seluruh data selesai diterima.',
+        'pages-toggle', 'Kembali ke awal bagian halaman statis');
       syncAccordion();
     }
 
