@@ -2,22 +2,19 @@
 
 Dedicated CDN assets for the TITOREISTA sitemap.
 
-This repository contains the sitemap CSS and JavaScript served through:
+This repository contains minified CSS and JavaScript assets served through Cloudflare Pages.
 
-- `https://assets.titoreista.com/sitemap/css/sitemap.css`
-- `https://assets.titoreista.com/sitemap/js/sitemap.js`
+## Public URLs
+
+- https://assets.titoreista.com/sitemap/css/sitemap.min.css
+- https://assets.titoreista.com/sitemap/js/sitemap.min.js
 
 ## Structure
 
 ```text
-src/
-├── css/
-│   └── sitemap.css
-└── js/
-    └── sitemap.js
-
 dist/
-├── css/
-│   └── sitemap.css
-└── js/
-    └── sitemap.js
+└── sitemap/
+    ├── css/
+    │   └── sitemap.min.css
+    └── js/
+        └── sitemap.min.js
