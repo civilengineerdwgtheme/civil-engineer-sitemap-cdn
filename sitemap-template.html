@@ -1,0 +1,91 @@
+<!--
+  Blogger HTML sitemap template
+
+  Before publishing:
+  1. Replace the site name and descriptive text.
+  2. Replace the image, alt text, and title, or remove the image block.
+  3. Configure the JavaScript HOME_PAGE value for the target Blogger site.
+  4. Keep the element IDs used by sitemap.js unchanged.
+-->
+<link rel="stylesheet" href="https://assets.titoreista.com/sitemap/css/sitemap.min.css">
+
+<div id="app-container">
+  <div class="sm-hero" id="sitemap-top">
+    <h1 class="sm-title">Site Name Sitemap</h1>
+    <p class="sm-lead">Explore the pages, articles, and resources published on Site Name.</p>
+    <div class="sm-figure separator">
+      <!-- Replace this image or remove this block when it is not needed. -->
+      <img
+        alt="Site Name navigation diagram"
+        border="0"
+        height="151"
+        src="https://example.com/path/to/sitemap-image.webp"
+        title="Site Name navigation diagram"
+        width="320"
+      />
+    </div>
+    <p class="sm-desc">
+      Welcome to the Site Name sitemap. Browse the website's static pages and
+      published articles in one structured view. Use the search controls to
+      find a topic, title, or category.
+    </p>
+  </div>
+
+  <div class="sm-section is-articles">
+    <h2 class="sm-section-title sm-acc-toggle is-open" id="articles-toggle" role="button" tabindex="0" aria-controls="articles-body" aria-expanded="true">
+      <span class="sm-tt">
+        <svg class="sm-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3h16a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1m2 4v2h12V7zm0 4v2h12v-2zm0 4v2h8v-2z"/></svg>
+        <span>Articles and Resources</span>
+      </span>
+      <svg class="sm-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15.4 5.6 9l1.4-1.4 5 5 5-5L18.4 9z"/></svg>
+    </h2>
+    <div class="sm-acc-body is-open" id="articles-body">
+      <p class="sm-section-desc">Browse articles and resources by category or search for a meaningful topic or title.</p>
+      <div class="sm-controls">
+        <div class="sm-field">
+          <label for="label-sorter">Choose a category</label>
+          <div class="sm-select-wrap">
+            <select id="label-sorter" disabled="disabled">
+              <option selected="selected">Loading categories...</option>
+            </select>
+          </div>
+        </div>
+        <div class="sm-field">
+          <label for="feed-q">Search topics or titles</label>
+          <form id="post-searcher" onsubmit="return false;">
+            <input id="feed-q" type="text" placeholder="Type a topic, title, or term..." autocomplete="off">
+            <button type="submit" id="action-btn" class="sm-btn" data-mode="search">
+              <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10.44 11.44a1 1 0 0 1 1.42 0l3.85 3.85a1 1 0 0 1-1.42 1.42l-3.85-3.85a1 1 0 0 1 0-1.42"/><path d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11M13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0"/></svg>
+              <span class="sm-btn-tx">Search</span>
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="sm-status" id="result-desc">Loading articles...</div>
+      <ul class="sm-list" id="feed-container"></ul>
+      <div class="sm-nav" id="feed-nav"></div>
+    </div>
+  </div>
+
+  <div class="sm-section is-pages">
+    <h2 class="sm-section-title sm-acc-toggle is-open" id="pages-toggle" role="button" tabindex="0" aria-controls="pages-body" aria-expanded="true">
+      <span class="sm-tt">
+        <svg class="sm-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h9l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2m8 1.5V8h4.5zM8 12h8v1.6H8zm0 3.4h8V17H8z"/></svg>
+        <span>Static Pages</span>
+      </span>
+      <svg class="sm-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15.4 5.6 9l1.4-1.4 5-5 5 5L18.4 9z"/></svg>
+    </h2>
+    <div class="sm-acc-body is-open" id="pages-body">
+      <p class="sm-section-desc">Find the main information pages published on this website.</p>
+      <div class="sm-status" id="page-desc">Loading static pages...</div>
+      <ul class="sm-list" id="page-container"></ul>
+      <div class="sm-nav" id="page-nav"></div>
+    </div>
+  </div>
+
+  <div class="sm-note">
+    <p>Thank you for exploring this sitemap. If you cannot find a reference, try another meaningful search term or browse the categories above.</p>
+  </div>
+</div>
+
+<script defer src="https://assets.titoreista.com/sitemap/js/sitemap.min.js"></script>

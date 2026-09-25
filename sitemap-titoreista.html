@@ -1,0 +1,82 @@
+<!-- ============================================================
+     SITEMAP - CivilEngineerDWG Theme Edition
+     Kustomisasi khusus untuk situs: titoreista.com (TITOREISTA)
+     Paste seluruh kode ini ke Halaman Statis (mode HTML/View)
+     ============================================================ -->
+<link rel="stylesheet" href="https://assets.titoreista.com/sitemap/css/sitemap.min.css">
+
+<div id="app-container">
+
+  <div class="sm-hero" id="sitemap-top">
+    <h1 class="sm-title">Peta Situs TITOREISTA</h1>
+    <p class="sm-lead">Jelajahi seluruh halaman informasi, panduan teknik, serta arsip artikel Teknik Sipil, Arsitektur, dan Konstruksi di TITOREISTA.</p>
+    <div class="sm-figure separator">
+      <img alt="Diagram struktur navigasi situs TITOREISTA, mencakup halaman statis dan arsip artikel Teknik Sipil." border="0" data-original-height="442" data-original-width="938" height="151" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgN9OFDDqQRhL5bZRQASj-Ag8nNDOfylkHXRY7Gr0RIR5mW-EU0uZMEbBx4LkszCPmZlgq2v9pZjPcBZFGm7hTmlmhMg5R27QqmlplR3XBFGuOOVmecKj9xjuZOe7RTK7YM4YbN-TQquyk0aBv54D5WHCFbI5gKSR2QSNDAWKJCbS35Ufm3lXjArat9c1vN/s320/website-sitemap-structure-flowchart.webp" title="Peta Navigasi TITOREISTA" width="320" />
+    </div>
+    <p class="sm-desc">
+      Selamat datang di pusat referensi TITOREISTA &mdash; sumber daya bagi Insinyur Sipil, Arsitek, dan praktisi konstruksi. Di halaman ini Anda dapat menelusuri informasi situs serta koleksi teknis secara terstruktur, mulai dari rumus dan perhitungan struktur, panduan desain infrastruktur, wawasan manajemen konstruksi, hingga arsip gambar kerja (DWG) yang dapat digunakan untuk mendukung pekerjaan lapangan maupun studi Anda. Gunakan panel penelusuran untuk menemukan referensi tertentu, lalu jelajahi dua kelompok sumber daya yang tersedia di bawah ini.
+    </p>
+  </div>
+
+  <!-- ===== STATIC PAGES ===== -->
+  <div class="sm-section is-pages">
+    <h2 class="sm-section-title sm-acc-toggle is-open" id="pages-toggle" role="button" tabindex="0" aria-controls="pages-body" aria-expanded="true">
+      <span class="sm-tt">
+        <svg class="sm-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h9l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2m8 1.5V8h4.5zM8 12h8v1.6H8zm0 3.4h8V17H8z"/></svg>
+        <span>Halaman Statis</span>
+      </span>
+      <svg class="sm-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15.4 5.6 9l1.4-1.4 5 5 5-5L18.4 9z"/></svg>
+    </h2>
+    <div class="sm-acc-body is-open" id="pages-body">
+      <p class="sm-section-desc">Di bagian ini Anda dapat menemukan halaman informasi utama TITOREISTA, termasuk profil situs, kebijakan privasi, disclaimer, serta informasi untuk menghubungi kami.</p>
+      <div class="sm-status" id="page-desc">Memuat halaman statis&hellip;</div>
+      <ul class="sm-list" id="page-container"></ul>
+      <div class="sm-nav" id="page-nav"></div>
+    </div>
+  </div>
+
+  <!-- ===== ARTICLES ===== -->
+  <div class="sm-section is-articles">
+    <h2 class="sm-section-title sm-acc-toggle is-open" id="articles-toggle" role="button" tabindex="0" aria-controls="articles-body" aria-expanded="true">
+      <span class="sm-tt">
+        <svg class="sm-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3h16a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1m2 4v2h12V7zm0 4v2h12v-2zm0 4v2h8v-2z"/></svg>
+        <span>Artikel &amp; Panduan Teknik</span>
+      </span>
+      <svg class="sm-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15.4 5.6 9l1.4-1.4 5 5 5-5L18.4 9z"/></svg>
+    </h2>
+    <div class="sm-acc-body is-open" id="articles-body">
+    <p class="sm-section-desc">Telusuri kumpulan artikel, rumus teknik, referensi gambar kerja (DWG), dan pembaruan seputar Teknik Sipil, Arsitektur, serta Manajemen Konstruksi. Gunakan panel penelusuran TITOREISTA untuk memilih bidang atau menemukan topik tertentu.</p>
+
+    <div class="sm-controls">
+      <div class="sm-field">
+        <label for="label-sorter">Pilih bidang referensi</label>
+        <div class="sm-select-wrap">
+          <select id="label-sorter" disabled="disabled">
+            <option selected="selected">Memuat kategori&hellip;</option>
+          </select>
+        </div>
+      </div>
+      <div class="sm-field">
+        <label for="feed-q">Temukan topik atau judul</label>
+        <form id="post-searcher" onsubmit="return false;">
+          <input id="feed-q" type="text" placeholder="Ketik topik, judul, atau istilah&hellip;" autocomplete="off" />
+          <button type="submit" id="action-btn" class="sm-btn" data-mode="search">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10.44 11.44a1 1 0 0 1 1.42 0l3.85 3.85a1 1 0 0 1-1.42 1.42l-3.85-3.85a1 1 0 0 1 0-1.42"/><path d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11M13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0"/></svg>
+            <span class="sm-btn-tx">Telusuri</span>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="sm-status" id="result-desc">Memuat artikel&hellip;</div>
+    <ul class="sm-list" id="feed-container"></ul>
+    <div class="sm-nav" id="feed-nav"></div>
+    </div>
+  </div>
+
+  <div class="sm-note">
+    <p>Terima kasih telah menjelajahi peta situs TITOREISTA. Kami terus memperbarui informasi situs, artikel, rumus teknik, dan gambar kerja (DWG) untuk mendukung pekerjaan Anda di bidang Teknik Sipil, Arsitektur, dan Konstruksi. Jika belum menemukan referensi yang dicari, gunakan istilah atau judul lain pada panel penelusuran, atau hubungi kami langsung.</p>
+  </div>
+</div>
+
+<script defer src="https://assets.titoreista.com/sitemap/js/sitemap.min.js"></script>
